@@ -1,0 +1,14 @@
+.common {
+  text-align: center;
+  color: white;
+  border: none;
+  font-family: 'Roboto';
+  letter-spacing: 0.6px;
+}
+
+.primary {
+  background-color: var(--color-primary);
+  font-size: 0.8rem;
+   border-radius: 20px;
+  padding: 8.5px 30px 8.5px 30px;
+}
