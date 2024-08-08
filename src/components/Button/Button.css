@@ -2,13 +2,34 @@
   text-align: center;
   color: white;
   border: none;
-  font-family: 'Roboto';
-  letter-spacing: 0.6px;
+  width: fit-content;
+  height: fit-content;
+  font-family: 'Open Sans';
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .primary {
   background-color: var(--color-primary);
   font-size: 0.8rem;
-   border-radius: 20px;
+  border-radius: 20px;
   padding: 8.5px 30px 8.5px 30px;
+}
+
+.primary:hover {
+  background-color: var(--hover-primary-button);
+}
+
+
+.edit{
+  padding: 8px 15px 8px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--color-secondary);
+  gap:5px;
+  cursor: pointer;
+  background-color: white;
+  outline: 1px solid var(--color-secondary);
 }
