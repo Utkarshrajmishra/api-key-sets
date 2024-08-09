@@ -1,6 +1,6 @@
 import { FC, HtmlHTMLAttributes } from 'react';
 import { HiOutlinePencil } from 'react-icons/hi2';
-import './Button.css';
+import '../styles/Button.css'
 
 type ButtonProps = {
   vairant: 'primary' | 'secondary' | 'edit';

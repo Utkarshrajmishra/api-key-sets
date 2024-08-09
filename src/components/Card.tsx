@@ -1,8 +1,11 @@
-import './Card.css';
-import Button from '../Button/Button';
+import '../styles/Card.css'
+import Button from './Button';
 import { GoEyeClosed, GoEye } from 'react-icons/go';
+import { useState } from 'react';
 
 const Card = () => {
+  const [toggleKey, setToggleKey] = useState(false);
+
   return (
     <section className="card-container">
       <div className="card-head">
@@ -18,16 +21,32 @@ const Card = () => {
         <p className="text-small">Default Model Versions</p>
         <p className="api-model">ChatGPT 4.0 Mini</p>
       </div>
-      <div className="flex ">
+      <div className="flex">
         <div>
           <p className="text-small">API Key</p>
-          <p className="api-key">***********************</p>
+          <p className="api-key">
+            {toggleKey ? 'YOUR_API_KEY_HERE' : '***********************'}
+          </p>
         </div>
-        <GoEyeClosed fontSize={17} color="#939596" className='icon'/>
+        {toggleKey ? (
+          <GoEye
+            onClick={() => setToggleKey(false)}
+            fontSize={17}
+            color="#939596"
+            className="icon"
+          />
+        ) : (
+          <GoEyeClosed
+            onClick={() => setToggleKey(true)}
+            fontSize={17}
+            color="#939596"
+            className="icon"
+          />
+        )}
       </div>
       <div className="card-foot">
         <p>
-          <i> Last Used: 12 min ago</i>
+          <i>Last Used: 12 min ago</i>
         </p>
         <p className="default-batch">DEFAULT</p>
       </div>
