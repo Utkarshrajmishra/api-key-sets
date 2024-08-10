@@ -5,11 +5,12 @@ import Modal from '../components/Modal';
 import { useState } from 'react';
 
 const Dashboard = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
-  const handleModal = () => setShowModal((showModal) => !showModal);
+  const handleModal = () => {
+    setShowModal((showModal) => !showModal);
+  };
 
-  const handleClick = () => console.log('Button Clicked');
   return (
     <main>
       <section className="main-container">

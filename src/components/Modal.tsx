@@ -1,8 +1,15 @@
 import '../styles/Modal.css';
+import Form from './Form';
 
 interface ModalProps {
   show: boolean;
   onClose: () => void;
+}
+
+interface FormData {
+  apiProvider: string;
+  apiVersion: string;
+  apiKey: string;
 }
 
 const Modal: React.FC<ModalProps> = ({ show, onClose }) => {
@@ -11,26 +18,17 @@ const Modal: React.FC<ModalProps> = ({ show, onClose }) => {
   return (
     <div id="default-modal" className="modal-container">
       <div className="modal-content">
+        <div className="modal-close-icon">
+          <button className="modal-close" onClick={onClose}>
+            <img src="/images/cancel.svg" alt="Close Modal Button" width={15} />
+          </button>
+        </div>
         <div className="modal-header">
           <h3>API Key Set</h3>
-          <button className="modal-close" onClick={onClose}>
-           <img src="/images/cancel.svg" alt="Close Modal Button" />
-          </button>
+          <p>Please provide your educational details</p>
         </div>
         <div className="modal-body">
-          <p>
-            With less than a month to go before the European Union enacts new
-            consumer privacy laws for its citizens, companies around the world
-            are updating their terms of service agreements to comply.
-          </p>  
-        </div>
-        <div className="modal-footer">
-          <button className="btn-accept" onClick={onClose}>
-            I accept
-          </button>
-          <button className="btn-decline" onClick={onClose}>
-            Decline
-          </button>
+          <Form closeModal={onClose} />
         </div>
       </div>
     </div>
