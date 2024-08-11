@@ -4,15 +4,15 @@ import {
   localStorageSaveAPIInfo,
 } from '../localstorage/localstorageService';
 
-const initialState = localStorageGetAPIInfo(); // Ensure it's an array
+const initialState = localStorageGetAPIInfo(); 
 
 const APIInfoSlice = createSlice({
   name: 'apiInfo',
   initialState,
   reducers: {
     addAPI: (state, action) => {
-      const { apiProducer, apiVersion, apiKey } = action.payload;
-      state.push({ producer: apiProducer, version: apiVersion, key: apiKey });
+      const { apiProvider, apiVersion, apiKey } = action.payload;
+      state.push({ provider: apiProvider, version: apiVersion, key: apiKey });
       localStorageSaveAPIInfo(state);
     },
 
